@@ -1,54 +1,88 @@
-/* Base */
-body {
-  font-family: Arial, sans-serif;
+body.accueil-bg {
   margin: 0;
-  padding: 40px;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0eaff 0%, #bfefff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Titres */
-h1, h2, h3 {
-  color: #145A32; /* Vert tennis foncé */
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
-/* Sections */
-.section {
-  background-color: #ffffff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 6px solid #2ECC71; /* Vert clair */
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+.bubble {
+  background: rgba(60, 146, 255, 0.5);
+  border-radius: 50%;
+  width: 370px;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  transition: box-shadow 0.3s;
 }
 
-/* Header & Footer */
-header, footer {
-  text-align: center;
-  padding: 10px 0;
-  background-color: #D5F5E3;
-  border-radius: 6px;
-  margin-bottom: 20px;
+.bubble-text {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-shadow: 0 3px 14px rgba(30, 80, 158, 0.15);
 }
 
-footer {
-  font-size: 0.9em;
-  color: #666;
+.arrow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
 }
 
-/* Listes */
-ul {
-  padding-left: 20px;
+.arrow-text {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 7px;
+  font-weight: 500;
+  text-shadow: 0 2px 6px rgba(30,80,158,0.13);
+  letter-spacing: 0.5px;
 }
 
-li {
-  margin-bottom: 6px;
+.arrow {
+  font-size: 2.1rem;
+  color: #fff;
+  animation: bounce 1.2s infinite;
+  filter: drop-shadow(0 0 4px #2196f3aa);
 }
 
-/* Mots en surbrillance */
-.highlight {
-  font-weight: bold;
-  color: #27AE60; /* Vert acce*
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(18px);
+  }
+}
 
-
+/* Responsive */
+@media (max-width: 500px) {
+  .bubble {
+    width: 92vw;
+    max-width: 320px;
+    height: 92vw;
+    max-height: 320px;
+  }
+  .bubble-text {
+    font-size: 1.3rem;
+  }
+  .arrow {
+    font-size: 1.5rem;
+  }
+}
